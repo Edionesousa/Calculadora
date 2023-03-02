@@ -15,8 +15,7 @@ addDigit(digit){
     this.updateScreen()
 }
     updateScreen(){
-        this.currentOperationText.innerText =+ this.currentOperationText
-
+        this.currentOperationText.innerText =+ this.currentOperationText;
     }
 }
 
