@@ -27,17 +27,16 @@ body{
 #operations{
   text-align: right;
 
-}
-#privious-operaition{
+}#previus-operation{
   color: #777;
   padding: .2em;
   overflow-wrap: break-word;
-  min-height: 0.6em;
+  min-height: 1.6em;
   
 }
-#current-operation{
+#current-operetion{
   nav-right:1.6em;
-  font-size: 3em;
+  font-size: 5em;
   font-weight: 700;
   padding: 0.2em;
   overflow-wrap: break-word;
