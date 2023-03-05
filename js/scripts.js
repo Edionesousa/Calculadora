@@ -17,12 +17,22 @@ class calculator{
         this.currentOperation = digit
         this.updateScreen()
 
-        let operation
-        let previous =+ this.previousOperationText.innerText
-        let current =+ this.currentOperation.innerText
+    processOperation(operation) {
+        let operationvalue
+        const previous = + this.previousOperationText.innerText
+        const current = + this.currentOperation.innerText
+        switch (operation){
+            case "+":
+                operationvalue = previous + current
+                this.updateScreen(operationvalue, operation, current, previous)
+                break
+                default
+                return
+        }
+    }
     }
 
-    updateScreen(){
+    updateScreen(operationValue = null, operation = null, current = null, previous = null){
         this.currentOperationText.innerText += this.currentOperation
     }
 
