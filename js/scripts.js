@@ -17,7 +17,7 @@ class calculator{
         this.currentOperation = digit
         this.updateScreen()
 
-    processOperation(operation) {
+    processOperation(operation){
         let operationvalue
         const previous = + this.previousOperationText.innerText
         const current = + this.currentOperation.innerText
@@ -29,10 +29,19 @@ class calculator{
                 default
                 return
         }
+
     }
     }
 
-    updateScreen(operationValue = null, operation = null, current = null, previous = null){
+    updateScreen(operationValue = null,
+        operation = null,
+        current = null, 
+        previous = null
+    ){
+
+        console.log(operationvalue, operation, current, previous)
+
+        
         this.currentOperationText.innerText += this.currentOperation
     }
 
