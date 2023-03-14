@@ -13,7 +13,27 @@ class calculator{
 
     addDigit(digit){
 
+
+        if(digit === "." && this.currentOperationText.innerText.includes(".")){
+            return;
+        }
+
+        this.currentOperation = digit;
+        this.updateScreen();
+
+    };
+
+    previousOperation(operation){
+
+        let operationVale
+        let previous = +this.previousOperationText.innerText
+        let current = +this.currentOperationText.innerText
     }
+
+        updateScreen(){
+            this.currentOperationText.innerText += this.currentOperation;
+        };
+
 
 };
 
@@ -25,9 +45,9 @@ buttons.forEach((btn) =>{
         const value = e.target.innerText;
 
         if(+value >= 0 || value === "."){
-            console.log(value);
+            calc.addDigit(value);
         }else{
-            console.log("Op:" + value);
+            calc.previousOperation(value);
         }
     })
 })
