@@ -35,14 +35,12 @@ class calculator{
         }
         
     }
-
         updateScreen(
             operationValue = null,
             operation = null,
             current = null,
             previous = null
             ){
-
             if(operation === null){
                 this.currentOperationText.innerText += this.currentOperation;
             } else{
@@ -52,13 +50,8 @@ class calculator{
                 this.previousOperationText.innerText = `${operationValue} ${operation}`
             }
         };
-
-
 };
-
 const calc = new calculator(previousOperationText, currentOperationText);
-
-
 buttons.forEach((btn) =>{
     btn.addEventListener("click", (e) =>{
         const value = e.target.innerText;
@@ -67,6 +60,6 @@ buttons.forEach((btn) =>{
             calc.addDigit(value);
         }else{
             calc.previousOperation(value);
-        }//*
+        }
     })
 })
