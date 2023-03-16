@@ -25,13 +25,39 @@ class calculator{
 
     previousOperation(operation){
 
-        let operationVale
-        let previous = +this.previousOperationText.innerText
-        let current = +this.currentOperationText.innerText
+        let operationValue
+        const previous = +this.previousOperationText.innerText
+        const current = +this.currentOperationText.innerText
+
+        switch(operation){
+            case "+":
+                operation = previous + current
+                this.updateScreen(operationValue, operation, current, previous);
+            break;
+            default:
+            return;
+
+        }
+
+
     }
 
-        updateScreen(){
-            this.currentOperationText.innerText += this.currentOperation;
+        updateScreen(
+            operationValue = null,
+            operation = null,
+            current = null,
+            previous = null
+            ){
+                console.log(operationValue, operation, current, previous)
+
+            if(operation === null){
+                this.currentOperationText.innerText += this.currentOperation;
+            } else{
+                if(previous === 0){
+                    operation = current
+                }
+                this.previousOperationText.innerText = `${operationValue} ${operation}`
+            }
         };
 
 
