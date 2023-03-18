@@ -1,6 +1,6 @@
-const  previousOperationText = document.querySelector("#previous-operation");// previous === anterios
-const currentOperationText = document.querySelector("#current-operation"); // current === atual
-const buttons = document.querySelectorAll("#buttons-container","#button");
+const  previousOperationText = document.querySelector("#previous-operation")// previous === anterios
+const currentOperationText = document.querySelector("#current-operation") // current === atual
+const buttons = document.querySelectorAll("#buttons-container button")
 
 class calculator{
     constructor(previousOperationText, currentOperationText){
@@ -14,24 +14,22 @@ class calculator{
             return; 
         }
         this.currentOperation = digit
-        this.updateScreen()
+        this.updateScreen();
     };
     
 
-    processOperation(operation){
+    processOperation(operationt){
         let operationValue;
-        const previous = +this.previousOperationText.innerText;
+        const previous = +this.previousOperationText.innerText.split("")[0];
         const current = +this.currentOperationText.innerText;
 
         switch(operation){
             case "+": 
-            case "-":
                 operationValue = previous + current;
                 this.updateScreen(operationValue, operation, current, previous);
             break;
             default:
             return;
-            console.log(operation)
         }
         
     }
@@ -41,13 +39,14 @@ class calculator{
             current = null,
             previous = null
             ){
-            if(operation === null){
+            if(operationValue === null){
                 this.currentOperationText.innerText += this.currentOperation;
             } else{
                 if(previous === 0){
-                    operation = current
+                    operationValue = current
                 }
-                this.previousOperationText.innerText = `${operationValue} ${operation}`
+                this.previousOperationText.innerText = `${operationValue} ${operation}`;
+                this.currentOperationText.innerText ="";
             }
         };
 };
