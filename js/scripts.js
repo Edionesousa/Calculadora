@@ -18,8 +18,8 @@ class calculator{
     };
     
 
-    processOperation(operationt){
-        let operationValue;
+    processOperation(operation){
+        let operationValue
         const previous = +this.previousOperationText.innerText.split("")[0];
         const current = +this.currentOperationText.innerText;
 
@@ -57,8 +57,9 @@ buttons.forEach((btn) =>{
 
         if(+value >= 0 || value === "."){
             calc.addDigit(value);
-        }else{
-            calc.previousOperation(value);
-        }
+        }else(
+            calc.operation(value)
+        )
+        
     })
 })
