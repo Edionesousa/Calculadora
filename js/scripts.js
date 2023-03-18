@@ -16,8 +16,7 @@ class calculator{
         this.currentOperation = digit
         this.updateScreen();
     };
-    
-
+   
     processOperation(operation){
         let operationValue
         const previous = +this.previousOperationText.innerText.split("")[0];
@@ -31,7 +30,6 @@ class calculator{
             default:
             return;
         }
-        
     }
         updateScreen(
             operationValue = null,
@@ -54,12 +52,10 @@ const calc = new calculator(previousOperationText, currentOperationText);
 buttons.forEach((btn) =>{
     btn.addEventListener("click", (e) =>{
         const value = e.target.innerText;
-
         if(+value >= 0 || value === "."){
             calc.addDigit(value);
         }else(
             calc.operation(value)
         )
-        
     })
 })
