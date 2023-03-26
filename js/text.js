@@ -12,3 +12,5 @@ const getSmallestWord = (str) => {
 
     return getSmallestWord
 }
+
+console.log(getSmallestWord("sou forte"))
