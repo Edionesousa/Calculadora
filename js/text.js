@@ -4,7 +4,7 @@
     let getSmallestWord = strArr[0]
 
     for(let i = 1; i < strArr.length; i++ ){
-        if(strArr[1].length < getSmallestWord.length){
+        if(strArr[i].length < getSmallestWord.length){
             getSmallestWord = strArr[i]
 
         }
@@ -13,22 +13,22 @@
     return getSmallestWord
 }
 
-console.log(getSmallestWord("sou forte"))*/
+console.log(getSmallestWord("Carros classicos sao colecionaveis"))*/
 
 
-const getSmallestWord = (str) =>{
+const menorP = (str) =>{
     const strArr = str.trim().split(" ")
 
-     let getSmallestWord = strArr[0]
+     let menorP = strArr[0]
 
         for(let i = 1; i < strArr.length; i++){
 
-            if(strArr[1].length < getSmallestWord.length){
-                getSmallestWord = strArr[i]
+            if(strArr[i].length < menorP.length){
+                menorP = strArr[i]
             }
         }
-        return getSmallestWord
+        return menorP
     }
 
 
-console.log(getSmallestWord("carro bom carro caro"))
+console.log(menorP("Carros classicos sao colecionaveis"))
