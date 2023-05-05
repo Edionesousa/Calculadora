@@ -8,18 +8,12 @@ class calculator{
         this.currentOperationText = currentOperationText;
         this.currentOperation = "";
     }
-
-
-
     addDigit(digit){
         this.currentOperation = digit;
         this.updateScreen();
     }
-
-
     updateScreen(){
-    this.currentOperationText.innerText += this.currentOperation;
-
+        this.currentOperationText += currentOperationText;
     }
 }
 
