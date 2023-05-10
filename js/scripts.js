@@ -21,7 +21,7 @@ class calculator{
 
         processOperation(operation){
             let operationValue;
-            const previous = +this.previousOperationText.innerText;
+            const previous = +this.previousOperationText.innerText.split("")[0];
             const current = +this.currentOperationText.innerText;
 
 
@@ -29,9 +29,18 @@ class calculator{
                 case"+":
                 operationValue = previous + current;
                 this.upDateScreen(operationValue, operation, current, previous);
-
-                if(operationValue === null){
-                }
+                    break;
+                    case"-":
+                operationValue = previous - current;
+                this.upDateScreen(operationValue, operation, current, previous);
+                    break;
+                    case"/":
+                operationValue = previous / current;
+                this.upDateScreen(operationValue, operation, current, previous);
+                    break;
+                    case"*":
+                operationValue = previous * current;
+                this.upDateScreen(operationValue, operation, current, previous);
                     break;
                     default:
                     return;
@@ -44,6 +53,7 @@ class calculator{
             current = null,
             previous = null
         ){
+
 
             if(operationValue === null){
                 this.currentOperationText.innerText += this.currentOperation;
