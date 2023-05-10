@@ -20,46 +20,39 @@ class calculator{
         }
 
         processOperation(operation){
-            let operationValue
+            let operationValue;
             const previous = +this.previousOperationText.innerText;
             const current = +this.currentOperationText.innerText;
 
 
             switch(operation){
                 case"+":
-                operationValue = previous + current
-
-
+                operationValue = previous + current;
+                this.upDateScreen(operationValue, operation, current, previous);
 
                 if(operationValue === null){
-                    this.upDateScreen(operationValue, operation, current, previous)
                 }
                     break;
                     default:
                     return;
             }
-
         }       
-
 
         upDateScreen(
             operationValue = null,
             operation = null,
             current = null,
             previous = null
-
         ){
 
-            console.log(operationValue, operation, current, previous)
-
-
             if(operationValue === null){
-                this.currentOperationText.innerText += this.currentOperation
+                this.currentOperationText.innerText += this.currentOperation;
             }else{
                 if(previous === 0){
                     operationValue = current
                 }
-                this.previousOperationText =`${operationValue} ${operation}`
+
+                this.previousOperationText =`${operationValue} ${operation}`;
                 this.currentOperationText ="";
 
             }
