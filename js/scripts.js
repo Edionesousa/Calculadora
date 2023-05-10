@@ -56,7 +56,12 @@ class calculator{
             if(operationValue === null){
                 this.currentOperationText.innerText += this.currentOperation
             }else{
-                
+                if(previous === 0){
+                    operationValue = current
+                }
+                this.previousOperationText =`${operationValue} ${operation}`
+                this.currentOperationText ="";
+
             }
         }
 
