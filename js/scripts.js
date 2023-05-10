@@ -15,14 +15,24 @@ class calculator{
             if(digit === "." && this.currentOperationText.innerText.includes(".")){
                 return;
             }
-            this.currentOperation = digit
-            this.uppDateScreen()
+            this.currentOperation = digit;
+            this.uppDateScreen();
         }
 
         processOperation(operation){
             let operationValue
             let previous = +this.previousOperationText.innerText;
             let current = +this.currentOperationText.innerText;
+
+
+            switch(opreration){
+                case"+":
+                    break;
+                    default:
+                    return;
+
+
+            }
 
         }       
 
