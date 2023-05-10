@@ -16,30 +16,48 @@ class calculator{
                 return;
             }
             this.currentOperation = digit;
-            this.uppDateScreen();
+            this.upDateScreen();
         }
 
         processOperation(operation){
             let operationValue
-            let previous = +this.previousOperationText.innerText;
-            let current = +this.currentOperationText.innerText;
+            const previous = +this.previousOperationText.innerText;
+            const current = +this.currentOperationText.innerText;
 
 
-            switch(opreration){
+            switch(operation){
                 case"+":
+                operationValue = previous + current
+
+
+
+                if(operationValue === null){
+                    this.upDateScreen(operationValue, operation, current, previous)
+                }
                     break;
                     default:
                     return;
-
-
             }
 
         }       
 
 
+        upDateScreen(
+            operationValue = null,
+            operation = null,
+            current = null,
+            previous = null
 
-        uppDateScreen(){
-            this.currentOperationText.innerText += this.currentOperation
+        ){
+
+            console.log(operationValue, operation, current, previous)
+
+
+            if(operationValue === null){
+                this.currentOperationText.innerText += this.currentOperation
+            }else{
+                
+            }
         }
 
 }
