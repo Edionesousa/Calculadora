@@ -14,6 +14,7 @@ class calculator{
     addDigit(digit){
         this.currentOperation = digit
         this.updateScreen()
+        
     }
 
 
@@ -32,7 +33,7 @@ buttons.forEach((btn) =>{
         if( + value >= 0|| value === "."){
             clac.addDigit(value)
         }else{
-            console.log(value)
+            console.log("op" + value)
         }
     })
 })
