@@ -30,7 +30,7 @@ buttons.forEach((btn) =>{
     btn.addEventListener("click", (e) => {
         const value = e.target.innerText;
 
-        if( + value >= 0|| value === "."){
+        if( +value >= 0|| value === "."){
             clac.addDigit(value)
         }else{
             console.log("op" + value)
