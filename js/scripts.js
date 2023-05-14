@@ -58,6 +58,10 @@ class calculator{
                                 operationValue = previous * current;
                                 this.updateScreen(operationValue, operation, current, previous)
                                 break;
+                                case "DELL":
+                                    this.processDelOperator();
+                                    break;
+    
                     default:
                         return;
             }
@@ -95,8 +99,14 @@ class calculator{
             if(!mathOperation.includes(operation)) {
                 return;
             }
-
+            this.previousOperationText.innerText =
             this.previousOperationText.innerText = this.previousOperationText.innerText.slice(0, -1) + operation;
+        }
+
+        //Delete the last digit
+        processDelOperator(){
+            this.currentOperationText.innerText
+
         }
 
 }
