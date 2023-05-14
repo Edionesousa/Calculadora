@@ -90,13 +90,13 @@ class calculator{
              //Change math operation
 
         changeOperation(operation){
-            const mathOperation = ["*","/","+","-"]
+            const mathOperation = ["*", "/", "+", "-"];
 
             if(!mathOperation.includes(operation)) {
                 return;
             }
 
-            this.previousOperationText.innerText = this.previousOperationText.innerText.slice()
+            this.previousOperationText.innerText = this.previousOperationText.innerText.slice(0, -1) + operation;
         }
 
 }
