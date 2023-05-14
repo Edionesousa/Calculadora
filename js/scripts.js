@@ -37,7 +37,6 @@ class calculator{
             }
 
             // Get current and previous value
-            
             let operationValue
             const previous = +this.previousOperationText.innerText.split(" ")[0]; 
             const current = +this.currentOperationText.innerText;
@@ -61,10 +60,8 @@ class calculator{
                                 break;
                     default:
                         return;
-
             }
         }
-
 
     //change values of the calculator screen
     
@@ -90,10 +87,16 @@ class calculator{
         }
     }
 
-    //Change math operation
+             //Change math operation
 
         changeOperation(operation){
             const mathOperation = ["*","/","+","-"]
+
+            if(!mathOperation.includes(operation)) {
+                return;
+            }
+
+            this.previousOperationText.innerText = this.previousOperationText.innerText.slice()
         }
 
 }
