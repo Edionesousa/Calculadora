@@ -25,17 +25,40 @@ class calculator{
         //precess all calculator operations
         
         processOperation(operation){
-            console.log(operation)
+            // Check if current is empty
+            if(this.currentOperationText.innerText === "" ) {
+
+                // Change operation
+                if(this.previousOperationText !== "" ){
+                    this.changeOperation(operation)
+
+                }
+                return;
+            }
 
             // Get current and previous value
             
             let operationValue
-            let previous = +this.previousOperationText.innerText;
-            let current = +this.currentOperationText.innerText;
+            const previous = +this.previousOperationText.innerText.split(" ")[0]; 
+            const current = +this.currentOperationText.innerText;
 
             switch(operation){
                 case "+":
+                    operationValue = previous + current;
+                    this.updateScreen(operationValue, operation, current, previous)
                     break;
+                    case "-":
+                        operationValue = previous - current;
+                        this.updateScreen(operationValue, operation, current, previous)
+                        break;
+                        case "/":
+                            operationValue = previous / current;
+                            this.updateScreen(operationValue, operation, current, previous)
+                            break;
+                            case "*":
+                                operationValue = previous * current;
+                                this.updateScreen(operationValue, operation, current, previous)
+                                break;
                     default:
                         return;
 
@@ -51,11 +74,30 @@ class calculator{
         current = null, 
         previous = null
         ){
+            
+            if(operationValue === null){
+            this.currentOperationText.innerText += this.currentOperation;
+        }else{
+            //check is value is zero, if it is just add current value
+            if(previous === 0 ){
+                operationValue = current;
+            }
+            // Add current value to previus
+            this.previousOperationText.innerText = `${operationValue} ${operation}`
+            this.currentOperationText.innerText = "";
 
-        this.currentOperationText.innerText += this.currentOperation;
 
+        }
     }
+
+    //Change math operation
+
+        changeOperation(operation){
+            const mathOperation = ["*","/","+","-"]
+        }
+
 }
+
 
 const calc = new calculator (previousOperationText, currentOperationText);
 
