@@ -26,10 +26,9 @@ class calculator{
         
         processOperation(operation){
             // Check if current is empty
-            if(this.currentOperationText.innerText === "" ) {
-
+            if(this.currentOperationText.innerText === ""  && operation !== "C") {
                 // Change operation
-                if(this.previousOperationText !== "" ){
+                if(this.previousOperationText !== ""){
                     this.changeOperation(operation)
 
                 }
@@ -61,7 +60,15 @@ class calculator{
                                 case "DEL":
                                     this.processDelOperator();
                                     break;
-    
+                                    case "CE":
+                                        this.processClearCurrenteOperation();
+                                        break;
+                                        case "C":
+                                            this. processClearAllOperation()
+                                            break;
+                                            case "=":
+                                                this.processEqualOperation()
+                                                break;
                     default:
                         return;
             }
@@ -100,13 +107,34 @@ class calculator{
                 return;
             }
             this.previousOperationText.innerText =
-            this.previousOperationText.innerText = this.previousOperationText.innerText.slice(0, -1) + operation;
+            this.previousOperationText.innerText = 
+            this.previousOperationText.innerText.slice(0, -1) + operation;
         }
 
         //Delete the last digit
         processDelOperator(){
-            this.currentOperationText.innerText = this.currentOperationText.innerText.slice(0, -1);
+            this.currentOperationText.innerText = 
+            this.currentOperationText.innerText.slice(0, -1);
         }
+
+        // Delete the last digit
+
+        processClearCurrenteOperation(){
+            this.currentOperationText.innerText = "";
+        }
+        // Clear current opreration
+        processClearAllOperation(){
+            this.currentOperationText.innerText ="";
+            this.previousOperationText.innerText ="";
+            
+        }
+
+        // Process an operation
+        processEqualOperation(){
+            const opreration = previousOperationText.innerText.split(" ")[1];
+            this.processOperation(opreration);
+        }
+
 }
 
 
