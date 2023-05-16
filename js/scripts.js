@@ -58,7 +58,7 @@ class calculator{
                                 operationValue = previous * current;
                                 this.updateScreen(operationValue, operation, current, previous)
                                 break;
-                                case "DELL":
+                                case "DEL":
                                     this.processDelOperator();
                                     break;
     
@@ -105,10 +105,8 @@ class calculator{
 
         //Delete the last digit
         processDelOperator(){
-            this.currentOperationText.innerText
-
+            this.currentOperationText.innerText = this.currentOperationText.innerText.slice(0, -1);
         }
-
 }
 
 
